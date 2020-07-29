@@ -1,0 +1,10 @@
+.widget-container.fluid-height(ng-controller='LanguageCtrl')
+  .heading
+    i.fa.fa-flag
+    span(translate) Language
+  .widget-content.padded
+    .form-horizontal
+      .form-group
+        select.form-control(ng-model='lalal', ng-options='key as value for (key, value) in supportedLanguages')
+        //- select.form-control(ng-model='简体中文', ng-options='key as value for (key, value) in supportedLanguages')
+
