@@ -39,8 +39,13 @@
       li.screenshots-icon-item(ng-repeat='shot in screenshots').cursor-select
         h5 {{ device.name }}
         h6 {{ shot.body.date | date:'HH:mm:ss' }}
-        a(ng-href='{{ shot.body.href }}', target='_blank')
-          img(ng-src='{{ shot.body.href + shotSizeParameter(480, 1) }}',
-          ng-srcset='{{ shot.body.href + shotSizeParameter(480, 2) }} 2x').screenshot-image
-
+        //- a(ng-href='{{ shot.body.href }}', target='_blank')
+        img#xg-myImg(ng-src='{{ shot.body.href + shotSizeParameter(480, 1) }}',
+        ng-srcset='{{ shot.body.href + shotSizeParameter(480, 2) }} 2x',ng-click='bigImg(shot.body.href)').screenshot-image
+        div#xg-myModal.xg-modal
+          div#xg-phoneImg
+            div#xg-phoneImgDiv
+              sapn#xg-dialogClose.xg-close(ng-click="closeDiv()")&times;
+              img#xg-img01.xg-modal-content
+              //- div#caption
     .clearfix
